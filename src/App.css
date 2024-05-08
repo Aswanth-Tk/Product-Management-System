@@ -1,0 +1,146 @@
+.login {
+    width: 25%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.btn {
+    text-align: center;
+}
+
+.viewmodal {
+    height: 500px;
+
+}
+
+.viewmodalborder {
+    border: 5px solid black;
+}
+
+.search {
+    height: 38px;
+    width: 165px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+
+}
+
+.search:focus {
+    outline: none;
+}
+
+.navcontainer {
+    margin-left: 30px;
+}
+
+.navinput {
+    margin-left: 700px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+.searchicon {
+    font-size: 23px;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+.navtitle {
+    font-size: 28px;
+
+}
+
+.addproduct {
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    border: none;
+    width: 180px;
+    margin-left: 50px;
+}
+
+.search::placeholder {
+    color: black;
+}
+
+.table {
+    border: 1px solid black;
+}
+
+.tablebody:nth-child(even) {
+    background-color: rgb(211, 236, 245);
+}
+
+
+
+.formbutton {
+    background-color: black;
+    border: none;
+}
+
+.formbutton:hover {
+    background-color: black;
+
+}
+
+.formbutton:focus {
+    background-color: black;
+    box-shadow: none;
+}
+
+.formbutton:active {
+
+    box-shadow: none;
+    border: none;
+    outline: none;
+
+}
+
+.formhead {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form {
+    width: 25%;
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formpage {
+    height: 100vh;
+    background-color: rgb(211, 236, 245);
+}
+
+.formplaceholder {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.formplaceholder:focus {
+    box-shadow: none;
+    background-color: rgb(241, 236, 236);
+    border: 1px solid black;
+
+}
+
+.viewicon {
+    color: green;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.editicon {
+    color: blue;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.deleteicon {
+    color: red;
+    font-size: 20px;
+}
