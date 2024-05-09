@@ -32,9 +32,14 @@
 }
 
 .navinput {
-    margin-left: 700px;
-    border: 1px solid rgb(0, 0, 0);
+   border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
+}
+@media screen and (min-width:1300px) {
+    .navinput{
+        margin-left: 700px;
+    }
+    
 }
 
 .searchicon {
@@ -56,6 +61,12 @@
     border: none;
     width: 180px;
     margin-left: 50px;
+}
+@media screen and (max-width:1000px) {
+    .addproduct{
+        margin-left: 0;
+    }
+    
 }
 
 .search::placeholder {
