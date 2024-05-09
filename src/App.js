@@ -2,8 +2,10 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Formpage from './Formpage';
 import Tables from './Tables';
+import Loginpage from './Loginpage'
 import { createContext, useEffect, useState } from 'react';
 import axios from 'axios';
+
 const samplecontext = createContext();
 
 function App() {
@@ -50,7 +52,8 @@ function App() {
         <BrowserRouter>
           <Routes >
             <Route path="/form" element={<Formpage />} />
-            <Route path="/" element={<Tables />} />
+            <Route path="/tables" element={<Tables/>} />
+            <Route path="/" element={<Loginpage />} />
           </Routes>
         </BrowserRouter>
       </samplecontext.Provider>

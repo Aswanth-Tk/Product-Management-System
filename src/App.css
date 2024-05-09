@@ -1,7 +1,5 @@
 .login {
-    width: 25%;
-    border: 1px solid black;
-    margin: auto;
+    padding-top: 150px;
 }
 
 .btn {
@@ -143,4 +141,15 @@
 .deleteicon {
     color: red;
     font-size: 20px;
+}
+
+.demo{
+    background-color: white;
+    width: 20%;
+    margin: 100px 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 80px;
 }

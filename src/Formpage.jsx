@@ -62,7 +62,7 @@ const Formpage = () => {
             <Form.Control className='formplaceholder' type="text" defaultValue={num.category} onChange={change} name="category" />
           </Form.Group>
           <div className='text-center' >
-            <Button className='formbutton' onClick={notify} >
+            <Button className='formbutton ' onClick={notify} > 
               Submit
             </Button>
           </div>
