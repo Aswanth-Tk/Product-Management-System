@@ -28,7 +28,7 @@ const Formpage = () => {
           autoClose: 2000,
         })
     setTimeout(() => {
-      navigate(input !== "" ? '/' :
+      navigate(input !== "" ? '/tables' :
         "")
     }, 2500)
   }
