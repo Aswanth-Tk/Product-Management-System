@@ -1,5 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Button, Container, Modal, Nav, Navbar, Table } from 'react-bootstrap'
+
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import { ImEye } from "react-icons/im";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
@@ -101,36 +108,49 @@ const Tables = () => {
         </Container>
       </Navbar>
 
-      {hide === true ? <Table bordered className='table'>
-        <thead>
-          <tr >
-            <th style={{ textAlign: "center" }} >NO</th>
-            <th>Product</th>
-            <th>Brand</th>
-            <th>Category</th>
-            <th style={{ textAlign: "center" }}>Action</th>
-          </tr>
-        </thead>
-        {
-          product.map((i) => {
-            return (<tbody className='tablebody' key={i.id}>
-              <tr className='tablerow' >
-                <td style={{ textAlign: "center" }}>{i.id}</td>
-                <td>{i.title}</td>
-                <td>{i.brand}</td>
-                <td>{i.category}</td>
-                <td style={{ textAlign: "center" }}>
-                  <ImEye onClick={() => handleShow(i)} className='viewicon' />
+      
+
+      {hide === true ? <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+        <TableHead>
+          <TableRow>
+            <TableCell style={{textAlign:"center"}}> <b>NO</b></TableCell>
+            <TableCell style={{paddingLeft:"50px"}} align="left"> <b>Prodcut</b></TableCell>
+            <TableCell align="left"> <b>Category</b></TableCell>
+            <TableCell align="left"> <b>Price</b></TableCell>
+            <TableCell style={{ textAlign: "center" }} align="left"> <b>Action</b></TableCell>
+            
+          </TableRow>
+        </TableHead>
+        
+            {
+              product.map((i)=>{
+                return(
+                  <TableBody className='tablebody'>
+          
+            <TableRow className='tablerow'>
+              <TableCell style={{ textAlign: "center" }} component="th" scope="row">
+                {i.id}
+              </TableCell>
+              <TableCell style={{ paddingLeft:"50px"}} align="left">{i.title}</TableCell>
+              <TableCell align="left">{i.category}</TableCell>
+              <TableCell align="left">${i.price.toFixed(0)}</TableCell>
+              <TableCell style={{ textAlign: "center" }} align="left"><ImEye onClick={() => handleShow(i)} className='viewicon' />
                   <Link to={"/form"} onClick={get}>
                     <FaEdit className='editicon' onClick={() => edit(i)} />
                   </Link>
-                  <MdDelete className='deleteicon' onClick={() => handleShow2(i)} /></td>
-              </tr>
-            </tbody>
-            )
-          })
-        }
-      </Table> : ""}
+                  <MdDelete className='deleteicon' onClick={() => handleShow2(i)} /></TableCell>
+            </TableRow>
+            </TableBody>
+                )
+
+              })
+            }
+          
+        
+      </Table>
+    </TableContainer> : ""}
+      
       {/* modal for view button */}
       <>
         <Modal className='viewmodal' show={show} onHide={handleClose}>
