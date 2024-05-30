@@ -6,19 +6,19 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Formpage = () => {
+  const { currentproduct, input, setinput, product, setproduct, setdata } = useContext(samplecontext)
   const navigate = useNavigate();
-
   const notify = () => {
-    const update = product.map((p) => {
-      if (p === num) {
+    const update = product.map((index) => {
+      if (index === currentproduct) {
         return input
       }
-      else { return p }
+      else { return index }
     })
-    setproduct((num === "" && input !== "" ? [...product, input] : update))
-    setdata((num === "" && input !== "" ? [...product, input] : update))
+    setproduct((currentproduct === "" && input !== "" ? [...product, input] : update))
+    setdata((currentproduct === "" && input !== "" ? [...product, input] : update))
     input !== "" ?
-      toast.success((num === "" && input !== "" ? "product created successfully" : "product edited successfully"),
+      toast.success((currentproduct === "" && input !== "" ? "product created successfully" : "product edited successfully"),
         {
           autoClose: 2000,
           theme: "dark",
@@ -33,8 +33,8 @@ const Formpage = () => {
     }, 2500)
   }
 
-  const example = useContext(samplecontext)
-  const { num, input, setinput, product, setproduct, setdata } = example
+
+
   const change = (i) => {
     console.log({ ...input, [i.target.name]: i.target.value });
     setinput({ ...input, [i.target.name]: i.target.value });
@@ -44,25 +44,25 @@ const Formpage = () => {
     <div className='formpage'>
       <div className='p-5'>
         <Form className='form'   >
-          <h3 className='formhead'>{num === "" ? "Enter product details" : "Edit product details"}</h3>
+          <h3 className='formhead'>{currentproduct === "" ? "Enter product details" : "Edit product details"}</h3>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Number</Form.Label>
-            <Form.Control className='formplaceholder' type="number" defaultValue={num.id} onChange={change} name="id" />
+            <Form.Control className='formplaceholder' type="number" defaultValue={currentproduct.id} onChange={change} name="id" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Product</Form.Label>
-            <Form.Control className='formplaceholder' type="text" defaultValue={num.title} onChange={change} name="title" />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Label>Brand</Form.Label>
-            <Form.Control className='formplaceholder' type="text" defaultValue={num.brand} onChange={change} name="brand" />
+            <Form.Control className='formplaceholder' type="text" defaultValue={currentproduct.title} onChange={change} name="title" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Category</Form.Label>
-            <Form.Control className='formplaceholder' type="text" defaultValue={num.category} onChange={change} name="category" />
+            <Form.Control className='formplaceholder' type="text" defaultValue={currentproduct.category} onChange={change} name="category" />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Price</Form.Label>
+            <Form.Control className='formplaceholder' type="text" defaultValue={currentproduct.price} onChange={change} name="price" />
           </Form.Group>
           <div className='text-center' >
-            <Button className='formbutton ' onClick={notify} > 
+            <Button className='formbutton ' onClick={notify} >
               Submit
             </Button>
           </div>

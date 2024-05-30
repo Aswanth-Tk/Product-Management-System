@@ -11,17 +11,14 @@ const samplecontext = createContext();
 function App() {
   const [hide, sethide] = useState(true)
   const [data, setdata] = useState([])
-  
-  const [abc, setabc] = useState([])
-  const [abcd, setabcd] = useState([])
-  const [first, setfirst] = useState()
-  const [num, setnum] = useState([])
+  const [deleteproduct, setdeleteproduct] = useState([])
+ const [currentproduct, setcurrentproduct] = useState([])
   const [input, setinput] = useState(
     {
       id: "",
       title: "",
-      brand: "",
-      category: ""
+      category: "",
+      price:""
 
     }
   )
@@ -31,8 +28,6 @@ function App() {
     axios.get(products).then((arg)=>console.log(arg.data.products))
     axios.get(products).then((arg) => { setproduct(arg.data.products) })
     axios.get(products).then((arg) => { setdata(arg.data.products) })
-  
-
   }, [])
 
   return (
@@ -40,12 +35,10 @@ function App() {
       <samplecontext.Provider
         value={{
           hide, sethide,
-          num, setnum,
+          currentproduct, setcurrentproduct,
           product, setproduct,
           input, setinput,
-          abc,setabc,
-          first,setfirst,
-          abcd,setabcd,
+          deleteproduct, setdeleteproduct,
           data,setdata,
           
         }}>
