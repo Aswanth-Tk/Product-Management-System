@@ -23,9 +23,9 @@ const Tables = () => {
   const search = (index) => {
     console.log(index.target.value);
     setproduct(data.filter((arg) =>
-      (arg.title).toLowerCase().includes(index.target.value) ||
-      arg.brand.toLowerCase().includes(index.target.value) ||
-      arg.category.toLowerCase().includes(index.target.value)
+      (arg.title)?.toLowerCase().includes(index.target.value) ||
+      arg.brand?.toLowerCase().includes(index.target.value) ||
+      arg.category?.toLowerCase().includes(index.target.value)
     ))
   }
 
