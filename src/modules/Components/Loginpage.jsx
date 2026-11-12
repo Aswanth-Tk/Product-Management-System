@@ -33,7 +33,7 @@ const Loginpage = () => {
             <Form.Control className='formplaceholder' type="password" placeholder="Password" onChange={get} name="password" />
           </Form.Group>
           <div className='text-center'>
-            <Link to={ input.email === "demo123@gmail.com" && input.password === "demo123" ?'/tables':""}>
+            <Link to={ input.email === "demo123@gmail.com" && input.password === "demo123" ?'/products':""}>
             <Button className='formbutton' type="submit" onClick={notify} >
               Login
             </Button>

@@ -1,0 +1,1 @@
+export const API_URL = 'https://product-management-backend-k76s.vercel.app/api/products';
