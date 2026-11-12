@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
+import  { useState } from 'react'
 import { Button, Form } from 'react-bootstrap'
-import { samplecontext } from '../../App'
 import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,7 +19,7 @@ const Formpage = () => {
   )
 
   const handleSubmit = async () => {
-  for (const [key, value] of Object.entries(input)) {
+  for (const [value] of Object.entries(input)) {
     if (!value || value.trim() === '') {
       toast.error('Please fill required fields');
       return;

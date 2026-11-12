@@ -11,12 +11,6 @@ const ProductDetails = () => {
   const { id } = useParams();
   const [products, setProducts] = useState([])
   const navigate = useNavigate();
-  useEffect(()=>{
-    console.log('row id detail page', id);
-    console.log('products detail page', products);
-    
-  },[products])
-  
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -35,7 +29,7 @@ const ProductDetails = () => {
     };
   
     fetchProducts();
-  }, []);
+  }, [id]);
 
   const handleDeleteProduct =async (id)=>{
 
